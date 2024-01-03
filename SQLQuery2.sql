@@ -33,9 +33,8 @@
 
 -- Write a SELECT statement that lists the Albums with no songs
 
-Select * From Song
-
-SELECT DISTINCT al.Title, al.Id
+SELECT DISTINCT al.Title
 From Album al
-	Join Song s
+	LEFT Join Song s
 	On s.AlbumId = al.Id
+	Where s.AlbumId IS NULL;
