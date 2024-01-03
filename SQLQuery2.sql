@@ -33,8 +33,30 @@
 
 -- Write a SELECT statement that lists the Albums with no songs
 
-SELECT DISTINCT al.Title
-From Album al
-	LEFT Join Song s
-	On s.AlbumId = al.Id
-	Where s.AlbumId IS NULL;
+--SELECT DISTINCT al.Title
+--From Album al
+--	LEFT Join Song s
+--	On s.AlbumId = al.Id
+--	Where s.AlbumId IS NULL;
+
+--Using the INSERT statement, add one of your favorite artists to the Artist table.
+
+--INSERT INTO Artist (ArtistName, YearEstablished) VALUES ('Pink Floyd', 1965);
+
+--Using the INSERT statement, add one, or more, albums by your artist to the Album table.
+
+--INSERT INTO Album (Title, ReleaseDate, AlbumLength, Label, ArtistId, GenreId) VALUES ('The Piper At The Gates of Dawn', '08/04/1967', 246, 'Columbia', 31, 2);
+
+--Using the INSERT statement, add some songs that are on that album to the Song table.
+
+--INSERT INTO Song (Title, SongLength, ReleaseDate, GenreId, ArtistId, AlbumId) VALUES ('See Emily Play', 174, '08/04/1967', 4, 31, 25);
+--INSERT INTO Song (Title, SongLength, ReleaseDate, GenreId, ArtistId, AlbumId) VALUES ('Lucifer Sam', 189, '08/04/1967', 4, 31, 25);
+--INSERT INTO Song (Title, SongLength, ReleaseDate, GenreId, ArtistId, AlbumId) VALUES ('The Gnome', 134, '08/04/1967', 4, 31, 25);
+
+--Write a SELECT query that provides the song titles, album title, and artist name for all of the data you just entered in. Use the LEFT JOIN keyword sequence to connect the tables, and the WHERE keyword to filter the results to the album and artist you added.
+
+--SELECT s.Title as 'Song Title', al.Title as 'Album Title', a.ArtistName as 'Artist Name'
+--FROM Song s 
+--LEFT JOIN Album al ON s.AlbumId = al.Id
+--LEFT JOIN Artist a ON s.ArtistId = a.Id
+--WHERE al.ArtistId = 31;
